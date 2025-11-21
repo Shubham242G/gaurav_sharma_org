@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+      playfair: ['"Playfair Display"', 'serif'],
+      },
       colors: {
         'navy-dark': '#0a0e27',
         'navy-blue': '#1a1f3a',

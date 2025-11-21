@@ -2,74 +2,92 @@
 
 import React from 'react'
 
-const FeaturesSection: React.FC = () => {
+export default function FeaturesSection() {
+  const services = [
+    'Constitutional Law & Fundamental Rights',
+    'Criminal Defense & Litigation',
+    'Civil Rights & Public Interest Litigation',
+    'Corporate & Commercial Law',
+    'Family Law & Matrimonial Disputes',
+    'Property & Real Estate Law',
+  ]
+
   return (
-    <section className="relative py-20 md:py-32 bg-[#0a0e27]">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-8 lg:px-12">
+    <section className="relative py-16 md:py-20 bg-white">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-[40px] md:text-[52px] lg:text-[64px] leading-[1.1] font-normal text-white tracking-tight mb-6">
-            Why Choose Us
+        <div className="max-w-3xl mb-10">
+          <h2 className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.1] font-normal text-black tracking-tight mb-4">
+            Legal Services
           </h2>
-          <p className="text-[16px] md:text-[18px] text-white opacity-70 leading-relaxed">
-            We deliver excellence through innovation, expertise, and dedication.
+          <p className="text-[14px] md:text-[16px] text-black/70 leading-relaxed">
+            Comprehensive legal expertise across multiple practice areas, delivering justice with integrity and excellence.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          <div className="relative">
-            <div className="mb-6">
-              <div className="w-16 h-16 bg-[#5b5ff5] rounded-2xl flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                </svg>
+        {/* Content Grid - Services List & Circular Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] gap-8 lg:gap-12 items-center">
+          {/* Left - Services List */}
+          <div className="space-y-3">
+            {services.map((service: string, idx: number) => (
+              <div 
+                key={idx}
+                className="flex items-start gap-3 group hover:translate-x-2 transition-transform duration-300"
+              >
+                {/* Number */}
+                <div className="flex-shrink-0 w-7 h-7 bg-black text-white rounded-full flex items-center justify-center text-xs font-bold">
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
+                
+                {/* Service Name */}
+                <div className="flex-1 border-b border-black/10 pb-3">
+                  <p className="text-[15px] md:text-[17px] text-black font-light leading-relaxed group-hover:text-black/70 transition-colors">
+                    {service}
+                  </p>
+                </div>
               </div>
+            ))}
+
+            {/* Explore More Button */}
+            <div className="pt-4">
+              <button className="bg-black text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-black/80 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
+                <span>Explore All Services</span>
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </div>
-            <h3 className="text-[24px] font-semibold text-white mb-4">
-              Lightning Fast
-            </h3>
-            <p className="text-[15px] text-white opacity-70 leading-relaxed">
-              Optimized solutions that deliver exceptional performance and speed.
-            </p>
           </div>
 
-          <div className="relative">
-            <div className="mb-6">
-              <div className="w-16 h-16 bg-[#5b5ff5] rounded-2xl flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
+          {/* Right - Circular Image (Shifted Left) */}
+          <div className="flex justify-center lg:justify-start lg:pl-8">
+            <div 
+              className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden shadow-2xl"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=800&fit=crop')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                filter: 'grayscale(100%)',
+              }}
+            >
+              {/* Subtle overlay */}
+              <div className="absolute inset-0 bg-black/20"></div>
+              
+              {/* Optional decorative ring */}
+              <div className="absolute inset-0 border-4 border-black/10 rounded-full"></div>
             </div>
-            <h3 className="text-[24px] font-semibold text-white mb-4">
-              Secure & Reliable
-            </h3>
-            <p className="text-[15px] text-white opacity-70 leading-relaxed">
-              Enterprise-grade security protecting your data 24/7.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="mb-6">
-              <div className="w-16 h-16 bg-[#5b5ff5] rounded-2xl flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-[24px] font-semibold text-white mb-4">
-              Always Available
-            </h3>
-            <p className="text-[15px] text-white opacity-70 leading-relaxed">
-              Round-the-clock support ensuring your business never stops.
-            </p>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default FeaturesSection
