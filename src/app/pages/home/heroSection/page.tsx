@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
@@ -10,29 +10,34 @@ const services = [
     title: 'Personal Life', 
     description: 'Discover the person behind the lawyer – values, philosophy, and life beyond the courtroom.',
     route: '/pages/personalLife',
+    bgImage: '/assets/sir&pranay.jpg'
   },
   { 
     id: 2, 
     title: 'Practice Areas', 
     description: 'Explore specialized legal expertise across Constitutional, Criminal, Civil, and Corporate Law.',
     route: '/pages/practiceAreas',
+    bgImage: '/assets/heroBanner.jpg'
   },
   { 
     id: 3, 
     title: 'Professional Life', 
     description: 'Track record of landmark cases, achievements, and 25+ years of legal excellence.',
     route: '/pages/professionalLife',
+    bgImage: '/assets/professionalSir.jpg'
   },
   { 
     id: 4, 
     title: 'Social Life', 
     description: 'Community work, public speaking, and commitment to social justice beyond legal practice.',
     route: '/pages/socialLife',
+    bgImage: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=600&fit=crop'
   }
 ]
 
 export default function HeroSection() {
   const router = useRouter()
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null)
 
   const handleCardClick = (route: string) => {
     router.push(route)
@@ -40,16 +45,22 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen">
+      <section 
+        className="relative min-h-screen cursor-pointer"
+        onMouseEnter={() => setHoveredImage('banner')}
+        onMouseLeave={() => setHoveredImage(null)}
+      >
         {/* Background image layer - z-0 so content is above */}
         <div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 -z-10 transition-all duration-500"
           style={{
             backgroundImage: `url('/assets/gaurav-shrama-banner.jpg')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            filter: 'brightness(0.7)',
+            filter: hoveredImage === 'banner' 
+              ? 'grayscale(0%) brightness(0.8)' 
+              : 'grayscale(100%) brightness(0.7)',
           }}
         ></div>
 
@@ -93,7 +104,7 @@ export default function HeroSection() {
                 y: -20,
                 rotateX: 5,
                 rotateY: 5,
-                boxShadow: '0 25px 70px rgba(184, 185, 255, 0.5)',
+                boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
                 transition: { 
                   type: "spring", 
                   stiffness: 300, 
@@ -106,7 +117,9 @@ export default function HeroSection() {
                 stiffness: 75 
               }}
               onClick={() => handleCardClick(service.route)}
-              className="relative overflow-hidden bg-white/80 backdrop-blur-lg rounded-3xl border border-[#e8e9ff] shadow-lg
+              onMouseEnter={() => setHoveredImage(`card-${service.id}`)}
+              onMouseLeave={() => setHoveredImage(null)}
+              className="relative overflow-hidden rounded-3xl border border-black/20 shadow-lg
                          w-[200px] md:w-[260px] h-[480px] flex flex-col justify-center items-center text-center
                          select-none cursor-pointer"
               style={{
@@ -114,29 +127,43 @@ export default function HeroSection() {
                 transform: 'translateZ(0)',
               }}
             >
-              {/* Top gradient overlay */}
+              {/* Background Image with Hover-to-Color */}
+              <div
+                className="absolute inset-0 transition-all duration-500"
+                style={{
+                  backgroundImage: `url('${service.bgImage}')`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  filter: hoveredImage === `card-${service.id}` 
+                    ? 'grayscale(0%) brightness(0.6)' 
+                    : 'grayscale(100%) brightness(0.4)',
+                }}
+              ></div>
+
+              {/* Top gradient accent - removed blue tint */}
               <div 
                 className="absolute top-0 left-0 right-0 h-24 rounded-t-3xl"
                 style={{
-                  background: 'linear-gradient(180deg, rgba(235, 236, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%)',
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)',
                   pointerEvents: 'none',
                 }}
               ></div>
 
-              <div style={{ transform: 'translateZ(20px)' }} className="px-4">
+              {/* Content */}
+              <div style={{ transform: 'translateZ(20px)' }} className="px-4 relative z-10">
                 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-[#0a0e27] mb-4 px-4">
+                <h3 className="text-xl font-semibold text-white mb-4 px-4">
                   {service.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="px-4 text-[15px] leading-snug text-gray-600 mb-6">
+                <p className="px-4 text-[15px] leading-snug text-white/90 mb-6">
                   {service.description}
                 </p>
 
                 {/* Learn More Link */}
-                <div className="inline-flex items-center gap-2 text-[#5b5ff5] font-medium text-sm hover:gap-3 transition-all">
+                <div className="inline-flex items-center gap-2 text-white font-medium text-sm hover:gap-3 transition-all">
                   <span>Learn More</span>
                   <svg 
                     width="16" 

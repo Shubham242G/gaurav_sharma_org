@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function ProfessionalLife() {
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+
   const milestones = [
     {
       year: "Early Years",
@@ -62,15 +64,21 @@ export default function ProfessionalLife() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 40vh */}
-      <section className="relative h-[60vh] bg-black">
+      {/* Hero Banner - 60vh with Hover Effect */}
+      <section 
+        className="relative h-[85vh] bg-black cursor-pointer"
+        onMouseEnter={() => setHoveredImage('banner')}
+        onMouseLeave={() => setHoveredImage(null)}
+      >
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 transition-all duration-500"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=800&fit=crop')`,
+            backgroundImage: `url('/assets/professionalSir.JPG')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            filter: 'grayscale(100%) brightness(0.4)',
+            filter: hoveredImage === 'banner'
+              ? 'grayscale(0%) brightness(0.6)'
+              : 'grayscale(100%) brightness(0.4)',
           }}
         ></div>
 
@@ -132,7 +140,7 @@ export default function ProfessionalLife() {
         </div>
       </section>
 
-      {/* The Turning Point - Black Section with Image */}
+      {/* The Turning Point - Black Section with Hover Image */}
       <section className="relative py-16 md:py-20 bg-black text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center">
@@ -162,21 +170,26 @@ export default function ProfessionalLife() {
               </div>
             </motion.div>
 
-            {/* Right - Image */}
+            {/* Right - Image with Hover Effect */}
             <motion.div
+              
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer mr-10"
+              onMouseEnter={() => setHoveredImage('turning-point')}
+              onMouseLeave={() => setHoveredImage(null)}
             >
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 transition-all duration-500"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=1000&fit=crop')`,
+                  backgroundImage: `url('/assets/professional3.JPG')`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
-                  filter: 'grayscale(100%)',
+                  filter: hoveredImage === 'turning-point'
+                    ? 'grayscale(0%)'
+                    : 'grayscale(100%)',
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -347,25 +360,29 @@ export default function ProfessionalLife() {
         </div>
       </section>
 
-      {/* Continuing Education - White Section with Image */}
+      {/* Continuing Education - White Section with Hover Image */}
       <section className="relative py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Image */}
+            {/* Left - Image with Hover Effect */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+              onMouseEnter={() => setHoveredImage('education')}
+              onMouseLeave={() => setHoveredImage(null)}
             >
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 transition-all duration-500"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&h=800&fit=crop')`,
+                  backgroundImage: `url('/assets/professional2.JPG')`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
-                  filter: 'grayscale(100%)',
+                  filter: hoveredImage === 'education'
+                    ? 'grayscale(0%)'
+                    : 'grayscale(100%)',
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

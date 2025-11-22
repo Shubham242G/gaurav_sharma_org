@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function PersonalLife() {
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+
   const familyMembers = [
     {
       name: "Dr. NK Sharma",
@@ -63,15 +65,21 @@ export default function PersonalLife() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 65vh */}
-      <section className="relative h-[65vh] bg-black">
+      {/* Hero Banner - 65vh with Hover-to-Color Effect */}
+      <section 
+        className="relative h-[85vh] bg-black cursor-pointer"
+        onMouseEnter={() => setHoveredImage('banner')}
+        onMouseLeave={() => setHoveredImage(null)}
+      >
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 transition-all duration-500"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&h=800&fit=crop')`,
-            backgroundPosition: 'center',
+            backgroundImage: `url('/assets/sir&pranay.jpg')`,
+            backgroundPosition: 'center 35%',
             backgroundSize: 'cover',
-            filter: 'grayscale(100%) brightness(0.4)',
+            filter: hoveredImage === 'banner' 
+              ? 'grayscale(0%) brightness(0.6)' 
+              : 'grayscale(100%) brightness(0.4)',
           }}
         ></div>
 
@@ -119,27 +127,30 @@ export default function PersonalLife() {
         </div>
       </section>
 
-      {/* Legacy - Black Section with Image */}
+      {/* Legacy - Black Section with Hover-to-Color Image */}
       <section className="relative py-16 md:py-20 bg-black text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 items-center">
-            {/* Left - Image */}
+            {/* Left - Image with Hover Effect */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[550px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
+              onMouseEnter={() => setHoveredImage('legacy')}
+              onMouseLeave={() => setHoveredImage(null)}
             >
               <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop')`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  filter: 'grayscale(100%)',
-                }}
-              />
+  className="absolute inset-0 transition-all duration-500"
+  style={{
+    backgroundImage: `url('/assets/bhagwatDayalSingh.jpeg')`,
+    backgroundPosition: 'center top', // Changed from 'center'
+    backgroundSize: 'cover',
+    filter: hoveredImage === 'legacy' ? 'grayscale(0%)' : 'grayscale(100%)',
+  }}
+/>
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <p className="text-white text-xl font-semibold mb-2">Late Shri Bhagwat Dayal Sharma</p>
@@ -287,7 +298,7 @@ export default function PersonalLife() {
         </div>
       </section>
 
-      {/* Father's Support - Black Section with Image */}
+      {/* Father's Support - Black Section with Hover-to-Color Image */}
       <section className="relative py-16 md:py-20 bg-black text-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -311,21 +322,23 @@ export default function PersonalLife() {
               </div>
             </motion.div>
 
-            {/* Right - Image */}
+            {/* Right - Image with Hover Effect */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
+              onMouseEnter={() => setHoveredImage('father')}
+              onMouseLeave={() => setHoveredImage(null)}
             >
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 transition-all duration-500"
                 style={{
                   backgroundImage: `url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop')`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
-                  filter: 'grayscale(100%)',
+                  filter: hoveredImage === 'father' ? 'grayscale(0%)' : 'grayscale(100%)',
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

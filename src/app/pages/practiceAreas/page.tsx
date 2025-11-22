@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function PracticeAreas() {
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+
   const practiceAreas = [
     {
       title: "Family Law",
@@ -89,15 +91,21 @@ export default function PracticeAreas() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 40vh */}
-      <section className="relative h-[65vh] bg-black">
+      {/* Hero Banner - 70vh with Hover Effect */}
+      <section 
+        className="relative h-[85vh] bg-black cursor-pointer"
+        onMouseEnter={() => setHoveredImage('banner')}
+        onMouseLeave={() => setHoveredImage(null)}
+      >
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 transition-all duration-500"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=800&fit=crop')`,
-            backgroundPosition: 'center',
+            backgroundImage: `url('/assets/heroBanner.jpg')`,
+            backgroundPosition: 'center 35%',
             backgroundSize: 'cover',
-            filter: 'grayscale(100%) brightness(0.4)',
+            filter: hoveredImage === 'banner'
+              ? 'grayscale(0%) brightness(0.6)'
+              : 'grayscale(100%) brightness(0.4)',
           }}
         ></div>
 

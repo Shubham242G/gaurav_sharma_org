@@ -71,14 +71,15 @@ export default function FeaturesSection() {
           {/* Right - Circular Image (Shifted Left) */}
           <div className="flex justify-center lg:justify-start lg:pl-8">
             <div 
-              className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden shadow-2xl"
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=800&fit=crop')`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                filter: 'grayscale(100%)',
-              }}
-            >
+  className="relative w-[350px] h-[350px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden shadow-2xl"
+  style={{
+    backgroundImage: `url('/assets/circle.jpeg')`,
+    backgroundPosition: 'left center', // Changed from 'center'
+    backgroundSize: 'cover',
+    filter: 'grayscale(100%)',
+  }}
+>
+
               {/* Subtle overlay */}
               <div className="absolute inset-0 bg-black/20"></div>
               
