@@ -45,9 +45,20 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <motion.form 
+      onSubmit={handleSubmit} 
+      className="space-y-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       {/* Name and Email Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         {/* Name */}
         <div className="relative">
           <input
@@ -87,10 +98,15 @@ export default function ContactForm() {
             Email Address *
           </label>
         </div>
-      </div>
+      </motion.div>
 
       {/* Phone and Subject Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         {/* Phone */}
         <div className="relative">
           <input
@@ -141,10 +157,15 @@ export default function ContactForm() {
             </svg>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Message */}
-      <div className="relative">
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <textarea
           id="message"
           name="message"
@@ -161,10 +182,15 @@ export default function ContactForm() {
         >
           Message *
         </label>
-      </div>
+      </motion.div>
 
       {/* Submit Button */}
-      <div className="flex flex-col sm:flex-row items-center gap-4">
+      <motion.div 
+        className="flex flex-col sm:flex-row items-center gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         <button
           type="submit"
           disabled={isSubmitting}
@@ -202,7 +228,7 @@ export default function ContactForm() {
             <span className="text-sm font-medium">Sent successfully!</span>
           </motion.div>
         )}
-      </div>
-    </form>
+      </motion.div>
+    </motion.form>
   )
 }

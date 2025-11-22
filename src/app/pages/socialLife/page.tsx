@@ -2,9 +2,25 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export default function SocialLife() {
     const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+    const router = useRouter()
+
+    // Navigation function to contact section
+    const handleNavigateToContact = () => {
+        // Navigate to home page
+        router.push('/')
+        
+        // Scroll to contact section after navigation
+        setTimeout(() => {
+            const contactSection = document.getElementById('contactSection')
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+        }, 300)
+    }
 
     const initiatives = [
         {
@@ -415,7 +431,7 @@ export default function SocialLife() {
                 </div>
             </section>
 
-            {/* Final Quote - White Section */}
+            {/* Final Quote - White Section with CTA */}
             <section className="relative py-16 md:py-20 bg-white">
                 <div className="max-w-[800px] mx-auto px-6 md:px-8 lg:px-12 text-center">
                     <motion.div
@@ -427,7 +443,10 @@ export default function SocialLife() {
                         <p className="text-[20px] md:text-[24px] text-black/80 leading-relaxed italic mb-8">
                             "Being a lawyer, discussing issues like international relations, economy, and societal change—and acting upon them—have become crucial yet indispensable parts of my routine."
                         </p>
-                        <button className="bg-black text-white px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-black/90 transition-all shadow-lg">
+                        <button 
+                            onClick={handleNavigateToContact}
+                            className="bg-black text-white px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-black/90 transition-all shadow-lg"
+                        >
                             Join the Movement
                         </button>
                     </motion.div>

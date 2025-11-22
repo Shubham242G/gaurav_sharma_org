@@ -2,9 +2,25 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export default function ProfessionalLife() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+  const router = useRouter()
+
+  // Navigation function to contact section
+  const handleNavigateToContact = () => {
+    // Navigate to home page
+    router.push('/')
+    
+    // Scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contactSection')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 300)
+  }
 
   const milestones = [
     {
@@ -64,7 +80,7 @@ export default function ProfessionalLife() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 60vh with Hover Effect */}
+      {/* Hero Banner - 85vh with Hover Effect */}
       <section 
         className="relative h-[85vh] bg-black cursor-pointer"
         onMouseEnter={() => setHoveredImage('banner')}
@@ -172,7 +188,6 @@ export default function ProfessionalLife() {
 
             {/* Right - Image with Hover Effect */}
             <motion.div
-              
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -409,7 +424,7 @@ export default function ProfessionalLife() {
         </div>
       </section>
 
-      {/* Final Quote - Black Section */}
+      {/* Final Quote - Black Section with CTA Button */}
       <section className="relative py-16 md:py-20 bg-black text-white">
         <div className="max-w-[800px] mx-auto px-6 md:px-8 lg:px-12 text-center">
           <motion.div
@@ -421,7 +436,10 @@ export default function ProfessionalLife() {
             <p className="text-[20px] md:text-[24px] leading-relaxed italic mb-6">
               "From the values instilled by my parents to the ventures built from personal experiences - every step has been a commitment to making justice accessible, compassionate, and effective."
             </p>
-            <button className="bg-white text-black px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-white/90 transition-all shadow-lg">
+            <button 
+              onClick={handleNavigateToContact}
+              className="bg-white text-black px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-white/90 transition-all shadow-lg"
+            >
               Let's Work Together
             </button>
           </motion.div>

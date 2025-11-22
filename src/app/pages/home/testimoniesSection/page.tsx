@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 interface Testimonial {
   id: number
@@ -69,6 +70,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -80,6 +82,19 @@ export default function TestimonialsSection() {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' })
     }
+  }
+
+  const handleConsultationClick = () => {
+    // Navigate to home page with hash anchor
+    router.push('#contactSection')
+    
+    // Alternative: Scroll to element if on same page
+    setTimeout(() => {
+      const contactSection = document.getElementById('contactSection')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 100)
   }
 
   return (
@@ -216,7 +231,10 @@ export default function TestimonialsSection() {
           <p className="text-black/70 text-base mb-4">
             Ready to experience exceptional legal representation?
           </p>
-          <button className="bg-black text-white px-6 py-3 rounded-full text-[14px] font-semibold hover:bg-black/80 transition-all duration-200 shadow-lg hover:shadow-xl">
+          <button 
+            onClick={handleConsultationClick}
+            className="bg-black text-white px-6 py-3 rounded-full text-[14px] font-semibold hover:bg-black/80 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
             Schedule Your Consultation
           </button>
         </motion.div>

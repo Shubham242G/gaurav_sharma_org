@@ -43,6 +43,10 @@ export default function HeroSection() {
     router.push(route)
   }
 
+  const handleLearnMoreClick = () => {
+    router.push('/pages/home/contactSection')
+  }
+
   return (
     <>
       <section 
@@ -140,7 +144,15 @@ export default function HeroSection() {
                 }}
               ></div>
 
-              {/* Top gradient accent - removed blue tint */}
+              {/* Black Gradient Overlay for text readability */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%)',
+                }}
+              ></div>
+
+              {/* Top gradient accent */}
               <div 
                 className="absolute top-0 left-0 right-0 h-24 rounded-t-3xl"
                 style={{
@@ -163,7 +175,13 @@ export default function HeroSection() {
                 </p>
 
                 {/* Learn More Link */}
-                <div className="inline-flex items-center gap-2 text-white font-medium text-sm hover:gap-3 transition-all">
+                <div 
+                  className="inline-flex items-center gap-2 text-white font-medium text-sm hover:gap-3 transition-all cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handleLearnMoreClick()
+                  }}
+                >
                   <span>Learn More</span>
                   <svg 
                     width="16" 

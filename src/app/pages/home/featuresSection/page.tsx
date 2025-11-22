@@ -1,8 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function FeaturesSection() {
+  const [isImageHovered, setIsImageHovered] = useState(false)
+  const router = useRouter()
+
   const services = [
     'Constitutional Law & Fundamental Rights',
     'Criminal Defense & Litigation',
@@ -11,6 +15,10 @@ export default function FeaturesSection() {
     'Family Law & Matrimonial Disputes',
     'Property & Real Estate Law',
   ]
+
+  const handleExploreClick = () => {
+    router.push('/pages/practiceAreas')
+  }
 
   return (
     <section className="relative py-16 md:py-20 bg-white">
@@ -50,7 +58,10 @@ export default function FeaturesSection() {
 
             {/* Explore More Button */}
             <div className="pt-4">
-              <button className="bg-black text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-black/80 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
+              <button 
+                onClick={handleExploreClick}
+                className="bg-black text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-black/80 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+              >
                 <span>Explore All Services</span>
                 <svg 
                   width="16" 
@@ -68,18 +79,19 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Right - Circular Image (Shifted Left) */}
+          {/* Right - Circular Image with Hover Effect */}
           <div className="flex justify-center lg:justify-start lg:pl-8">
             <div 
-  className="relative w-[350px] h-[350px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden shadow-2xl"
-  style={{
-    backgroundImage: `url('/assets/circle.jpeg')`,
-    backgroundPosition: 'left center', // Changed from 'center'
-    backgroundSize: 'cover',
-    filter: 'grayscale(100%)',
-  }}
->
-
+              className="relative w-[350px] h-[350px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden shadow-2xl cursor-pointer transition-all duration-500"
+              style={{
+                backgroundImage: `url('/assets/circle.jpeg')`,
+                backgroundPosition: 'left center',
+                backgroundSize: 'cover',
+                filter: isImageHovered ? 'grayscale(0%)' : 'grayscale(100%)',
+              }}
+              onMouseEnter={() => setIsImageHovered(true)}
+              onMouseLeave={() => setIsImageHovered(false)}
+            >
               {/* Subtle overlay */}
               <div className="absolute inset-0 bg-black/20"></div>
               

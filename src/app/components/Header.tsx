@@ -1,20 +1,36 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
+  const [hoveredLogo, setHoveredLogo] = useState(false)
+  const router = useRouter()
+
+  const handleConsultationClick = () => {
+    router.push('/pages/home/contactSection')
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md shadow-sm">
       <div className="max-w-[1920px] mx-auto px-6 md:px-8 lg:px-12 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-2">
+          {/* Logo Section with Hover Effect */}
+          <Link 
+            href="/" 
+            className="flex items-center gap-2"
+            onMouseEnter={() => setHoveredLogo(true)}
+            onMouseLeave={() => setHoveredLogo(false)}
+          >
             <div className="w-[200px] flex items-center justify-center">
               <img 
                 src="/assets/gaurav_sharma.png" 
                 alt="Gaurav Sharma Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain transition-all duration-500"
+                style={{
+                  filter: hoveredLogo ? 'grayscale(0%)' : 'grayscale(100%)'
+                }}
               />
             </div>
           </Link>
@@ -64,7 +80,10 @@ export default function Header() {
             </div>
 
             {/* CTA Button - Desktop */}
-            <button className="hidden md:flex items-center gap-2 bg-black hover:bg-black/80 text-white px-8 py-3 rounded-full text-[15px] font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <button 
+              onClick={handleConsultationClick}
+              className="hidden md:flex items-center gap-2 bg-black hover:bg-black/80 text-white px-8 py-3 rounded-full text-[15px] font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
               <span>Schedule a Consultation</span>
               <svg 
                 width="18" 
@@ -81,7 +100,10 @@ export default function Header() {
             </button>
 
             {/* CTA Button - Mobile */}
-            <button className="md:hidden flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 shadow-lg">
+            <button 
+              onClick={handleConsultationClick}
+              className="md:hidden flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 shadow-lg"
+            >
               <span>Consult</span>
               <svg 
                 width="16" 

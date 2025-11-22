@@ -2,9 +2,25 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export default function PersonalLife() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+  const router = useRouter()
+
+  // Navigation function to contact section
+  const handleNavigateToContact = () => {
+    // Navigate to home page
+    router.push('/')
+    
+    // Scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contactSection')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 300)
+  }
 
   const familyMembers = [
     {
@@ -65,7 +81,7 @@ export default function PersonalLife() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 65vh with Hover-to-Color Effect */}
+      {/* Hero Banner - 85vh with Hover-to-Color Effect */}
       <section 
         className="relative h-[85vh] bg-black cursor-pointer"
         onMouseEnter={() => setHoveredImage('banner')}
@@ -142,14 +158,14 @@ export default function PersonalLife() {
               onMouseLeave={() => setHoveredImage(null)}
             >
               <div
-  className="absolute inset-0 transition-all duration-500"
-  style={{
-    backgroundImage: `url('/assets/bhagwatDayalSingh.jpeg')`,
-    backgroundPosition: 'center top', // Changed from 'center'
-    backgroundSize: 'cover',
-    filter: hoveredImage === 'legacy' ? 'grayscale(0%)' : 'grayscale(100%)',
-  }}
-/>
+                className="absolute inset-0 transition-all duration-500"
+                style={{
+                  backgroundImage: `url('/assets/bhagwatDayalSingh.jpeg')`,
+                  backgroundPosition: 'center top',
+                  backgroundSize: 'cover',
+                  filter: hoveredImage === 'legacy' ? 'grayscale(0%)' : 'grayscale(100%)',
+                }}
+              />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
@@ -398,7 +414,7 @@ export default function PersonalLife() {
         </div>
       </section>
 
-      {/* Final Quote - White Section */}
+      {/* Final Quote - White Section with CTA */}
       <section className="relative py-16 md:py-20 bg-white">
         <div className="max-w-[800px] mx-auto px-6 md:px-8 lg:px-12 text-center">
           <motion.div
@@ -410,10 +426,18 @@ export default function PersonalLife() {
             <p className="text-[20px] md:text-[24px] text-black/80 leading-relaxed italic mb-8">
               "From a legacy of leadership to building my own family—every experience, every person, every value has shaped the lawyer and human I am today."
             </p>
-            <div className="inline-block bg-black/5 px-6 py-3 rounded-full">
+            <div className="inline-block bg-black/5 px-6 py-3 rounded-full mb-8">
               <p className="text-sm text-black/70">
                 11 September 1982 | Father | Husband | Lawyer | Changemaker
               </p>
+            </div>
+            <div className="mt-8">
+              <button 
+                onClick={handleNavigateToContact}
+                className="bg-black text-white px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-black/90 transition-all shadow-lg"
+              >
+                Get in Touch
+              </button>
             </div>
           </motion.div>
         </div>

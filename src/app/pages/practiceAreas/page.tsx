@@ -2,9 +2,25 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export default function PracticeAreas() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null)
+  const router = useRouter()
+
+  // Navigation function to contact section
+  const handleNavigateToContact = () => {
+    // Navigate to home page
+    router.push('/')
+    
+    // Scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contactSection')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 300)
+  }
 
   const practiceAreas = [
     {
@@ -91,7 +107,7 @@ export default function PracticeAreas() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Banner - 70vh with Hover Effect */}
+      {/* Hero Banner - 85vh with Hover Effect */}
       <section 
         className="relative h-[85vh] bg-black cursor-pointer"
         onMouseEnter={() => setHoveredImage('banner')}
@@ -231,7 +247,10 @@ export default function PracticeAreas() {
             <p className="text-[15px] text-black/70 leading-relaxed mb-8 max-w-2xl mx-auto">
               Whether you're facing a family dispute, need healthcare compliance support, or require representation in the Supreme Court—I'm here to help with expertise and dedication.
             </p>
-            <button className="bg-black text-white px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-black/90 transition-all shadow-lg">
+            <button 
+              onClick={handleNavigateToContact}
+              className="bg-black text-white px-8 py-3.5 rounded-full text-[15px] font-semibold hover:bg-black/90 transition-all shadow-lg"
+            >
               Schedule a Consultation
             </button>
           </motion.div>

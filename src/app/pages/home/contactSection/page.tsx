@@ -6,7 +6,7 @@ import ContactForm from '../../../components/ContactForm'
 
 export default function ContactSection() {
   return (
-    <section className="relative py-16 md:py-20 bg-black">
+    <section id='contactSection' className="relative py-16 md:py-20 bg-black">
       <div className="max-w-[900px] mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-12">
