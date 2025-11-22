@@ -15,6 +15,70 @@ interface NotableCase {
 const notableCases: NotableCase[] = [
   {
     id: 1,
+    title: "HAVELLS INDIA LIMITED vs Union of India",
+    year: "Recent",
+    court: "Delhi High Court",
+    brief: "Exposed corporate malpractices and environmental harm by electronics manufacturers.",
+    full: "As someone deeply passionate about farming and nature, I was always troubled by the harmful practices of electronics manufacturers that came at the cost of our environment. This case gave me the platform to channel that concern into action. Arguing before the Delhi High Court, I exposed corporate malpractices, regulatory lapses, and the undue gains reaped by manufacturers at nature's expense. The matter didn't just resonate within the courtroom—it caught the attention of the media, earned public appreciation, and was commended by the bench. It was more than a legal victory; it was a step toward environmental justice."
+  },
+  {
+    id: 2,
+    title: "Rishabh @ Gaurav Bhagat vs State",
+    year: "2025",
+    court: "Trial Court / Delhi High Court",
+    brief: "Successfully defended three men falsely accused in rape case; all acquitted after 8 years.",
+    full: "This is a false rape case. Being a man I know and understand how these allegations can affect someone's life. I successfully obtained anticipatory bail for all three of my clients. After 8 years of the legal fight, all my clients were acquitted in July 2025. The case was indeed a complex one, but my clients and I were certain that we would get justice. We would be further filing a compensation suit for damages of ₹50 crore before the Delhi High Court seeking a compensation scheme for 'men' framed in false rape cases."
+  },
+  {
+    id: 3,
+    title: "Sumona Kaushik vs Yatin Kumar",
+    year: "Recent",
+    court: "Family Court",
+    brief: "Enabled mother to take her daughter to Canada; appreciated by Court for clarity on law.",
+    full: "This is one of the cases which is very near to my heart. Here, I was able to successfully procure an order from the Court to enable the mother to take her daughter to Canada. I was appreciated by the Court in the judgment for clarity on law and submissions made for the welfare of the minor child."
+  },
+  {
+    id: 4,
+    title: "Mobile PNDT License Approval for Max Labs",
+    year: "Recent",
+    court: "Regulatory Authority",
+    brief: "First-ever mobile ultrasound center license, revolutionizing radiology sector.",
+    full: "I can proudly say that Mednlaw, is the only firm to have successfully procured the license for a mobile ultrasound center for Max Labs. These centers have made it very easy for the elderly and bed-ridden individuals to get the ultrasound done. This particular step of Max Labs and mine has for sure revolutionized the radiology sector and has come up as a relief to a majority of people."
+  },
+  {
+    id: 5,
+    title: "Shamsher Gurjar vs Union of India",
+    year: "Ongoing",
+    court: "Delhi High Court",
+    brief: "Right to be forgotten case against Google and media houses post-acquittal.",
+    full: "The right to be forgotten is a fundamental right, and therefore it is imperative for the authorities to expunge all allegations and records of the case from platforms like Google, Twitter, etc. from official records following an acquittal. Accordingly, I have filed a petition in High Court against the tech platform Google, and media houses - TV-18 and Times Internet to ensure that all such allegations and their records are duly removed."
+  },
+  {
+    id: 6,
+    title: "Assistant Director IB vs Parveen @ Kale",
+    year: "Recent",
+    court: "Trial Court",
+    brief: "Plea bargain resulting in no punishment for economically disadvantaged defendant.",
+    full: "Parveen @ Kale came from a very poor background and was in dire need of money. When lured by one of his friends, he agreed to write the exams of Tier one and two for one of his friends. Parveen confessed his crime and agreed that he had written the test conducted by the IB Board and that he confessed the crime voluntarily and without any threat, inducement, coercion, or undue influence. We advised him to plea bargain in front of the court and he received no punishment seeing his circumstances."
+  },
+  {
+    id: 7,
+    title: "Suprem Bansal vs State",
+    year: "Recent",
+    court: "High Court",
+    brief: "Marriage declared null and void; cancer patient coerced by caretaker for property.",
+    full: "In this appalling case, my client's son, Rajeev Bansal who was a cancer patient, was deceitfully coerced into marriage by his caretaker, who later attempted to usurp all his property after his death. Given that Rajeev was in no condition to provide valid consent or make critical decisions, the Hon'ble Court rightfully declared the marriage null and void."
+  },
+  {
+    id: 8,
+    title: "CDR Estate and Private Limited & Anr. vs Shree Naurang Godavari Entertainment Limited and Ors",
+    year: "Ongoing",
+    court: "High Court",
+    brief: "Legal proceedings against renowned film star for ₹20 crore fraud.",
+    full: "We have also initiated legal proceedings against a renowned film star, who is accused of defrauding our client, CDR ESTATE AND PRIVATE LIMITED & ANR. of ₹20 crore."
+  },
+  {
+    id: 9,
     title: "Landmark Constitutional Victory on Privacy Rights",
     year: "2022",
     court: "Supreme Court of India",
@@ -22,7 +86,7 @@ const notableCases: NotableCase[] = [
     full: "Successfully argued for the fundamental right to privacy under Article 21 in a precedent-setting case that impacted millions of citizens. The judgment reinforced privacy as an intrinsic part of personal liberty and dignity, setting a landmark precedent for future constitutional matters. This case involved challenging government surveillance policies and establishing clear boundaries for state intrusion into private lives. The unanimous verdict by the 5-judge bench has been cited in over 100 subsequent cases."
   },
   {
-    id: 2,
+    id: 10,
     title: "Corporate Fraud Defense - ₹500 Crore Case",
     year: "2021",
     court: "Delhi High Court",
@@ -30,7 +94,7 @@ const notableCases: NotableCase[] = [
     full: "Defended a major Indian corporation against allegations of financial misconduct and securities fraud worth ₹500 crores. Through meticulous evidence analysis, expert testimony from forensic accountants, and proving compliance with SEBI regulations, successfully got all charges dropped. The case involved complex financial instruments, cross-border transactions, and required coordination with international law firms. Protected shareholder value and corporate reputation through strategic legal defense spanning 18 months of intense litigation."
   },
   {
-    id: 3,
+    id: 11,
     title: "Human Rights Campaign for Tribal Communities",
     year: "2020",
     court: "Supreme Court of India",
@@ -38,7 +102,7 @@ const notableCases: NotableCase[] = [
     full: "Pro-bono Public Interest Litigation representing marginalized tribal communities seeking essential welfare benefits and legal protections under Forest Rights Act, 2006. Secured landmark judgment mandating policy reforms for indigenous rights across 8 states, benefiting over 2 million tribal families. The case involved challenging discriminatory government policies, presenting extensive socio-economic data, and coordinating with multiple NGOs. The judgment has been hailed as a watershed moment in tribal rights jurisprudence in India."
   },
   {
-    id: 4,
+    id: 12,
     title: "Environmental Protection Case - Narmada River",
     year: "2019",
     court: "National Green Tribunal",
@@ -46,7 +110,7 @@ const notableCases: NotableCase[] = [
     full: "Successfully represented environmental activists in preventing illegal industrial dumping into Narmada River, affecting over 50 villages and critical wetland ecosystems. Secured immediate closure orders against 12 polluting units and mandatory environmental restoration fund of ₹200 crores. The case involved extensive environmental impact assessments, scientific expert testimonies, and satellite imagery evidence. This victory set important precedents for industrial accountability and community environmental rights."
   },
   {
-    id: 5,
+    id: 13,
     title: "Workers' Rights - Gig Economy Landmark Case",
     year: "2023",
     court: "Supreme Court of India",
@@ -54,7 +118,7 @@ const notableCases: NotableCase[] = [
     full: "Argued groundbreaking case establishing social security and minimum wage rights for gig economy workers across food delivery, ride-hailing, and freelance platforms. The judgment classified platform workers as 'employees' rather than 'independent contractors', extending ESI, PF, and other statutory benefits to over 5 million workers. This case required extensive economic analysis, comparative international law research, and testimonies from workers across 15 cities. The verdict has fundamentally reshaped India's labor law landscape in the digital age."
   },
   {
-    id: 6,
+    id: 14,
     title: "Medical Negligence - ₹10 Crore Compensation",
     year: "2018",
     court: "High Court",
@@ -62,6 +126,7 @@ const notableCases: NotableCase[] = [
     full: "Represented family in high-profile medical negligence case against premier hospital chain, securing record ₹10 crore compensation for victim of botched surgical procedure resulting in permanent disability. The case involved complex medical evidence, cross-examination of top surgeons, and establishing hospital's systemic failures in patient safety protocols. This landmark verdict established important precedents for medical accountability, informed consent standards, and quantum of compensation in medical negligence cases in India."
   }
 ]
+
 
 export default function CTASection() {
   const [currentIndex, setCurrentIndex] = useState(0)

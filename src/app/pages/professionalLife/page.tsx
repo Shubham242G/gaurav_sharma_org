@@ -47,6 +47,13 @@ export default function ProfessionalLife() {
 
   const ventures = [
     {
+      name: "Gaurav Sharma Law Offices (GSLO)",
+      year: "2010",
+      tagline: "Comprehensive Legal Solutions",
+      description: "A full-service law firm providing comprehensive legal representation across multiple practice areas including constitutional law, criminal defense, family law, corporate litigation, and more. GSLO is built on principles of excellence, integrity, and client-focused service.",
+      icon: "⚖️"
+    },
+    {
       name: "Mednlaw",
       year: "2010",
       tagline: "Healthcare Compliance & Protection",
@@ -237,8 +244,8 @@ export default function ProfessionalLife() {
         </div>
       </section>
 
-      {/* Ventures - Black Section */}
-      <section className="relative py-16 md:py-20 bg-black text-white">
+      {/* Ventures - Black Section with Horizontal Scroll */}
+      <section className="relative py-16 md:py-20 bg-black text-white overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -255,29 +262,55 @@ export default function ProfessionalLife() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {ventures.map((venture, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{venture.icon}</div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <h3 className="text-2xl font-semibold">{venture.name}</h3>
-                  <span className="text-xs text-white/50">{venture.year}</span>
-                </div>
-                <p className="text-sm text-white/60 mb-3 italic">{venture.tagline}</p>
-                <p className="text-[14px] text-white/80 leading-relaxed">
-                  {venture.description}
-                </p>
-              </motion.div>
-            ))}
+          {/* Horizontal Scrollable Container */}
+          <div className="relative">
+            <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
+              {ventures.map((venture, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  className="flex-shrink-0 w-[340px] border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all duration-300 snap-start"
+                >
+                  <div className="text-4xl mb-4">{venture.icon}</div>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <h3 className="text-2xl font-semibold">{venture.name}</h3>
+                    <span className="text-xs text-white/50">{venture.year}</span>
+                  </div>
+                  <p className="text-sm text-white/60 mb-3 italic">{venture.tagline}</p>
+                  <p className="text-[14px] text-white/80 leading-relaxed">
+                    {venture.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Scroll Indicator */}
+            <div className="text-center mt-4">
+              <p className="text-xs text-white/40">← Scroll to explore more →</p>
+            </div>
           </div>
         </div>
+
+        {/* Custom Scrollbar Styles */}
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            height: 8px;
+          }
+          .scrollbar-hide::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+          }
+          .scrollbar-hide::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+          }
+          .scrollbar-hide::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+          }
+        `}</style>
       </section>
 
       {/* Detailed Ventures Story - White Section */}
