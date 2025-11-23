@@ -24,7 +24,7 @@ const services = [
     title: 'Professional Life', 
     description: 'Track record of landmark cases, achievements, and 25+ years of legal excellence.',
     route: '/pages/professionalLife',
-    bgImage: '/assets/professionalSir.jpg'
+    bgImage: '/assets/professionalSir.JPG'
   },
   { 
     id: 4, 
