@@ -37,13 +37,13 @@ export default function Footer() {
               href="tel:+919876543210" 
               className="text-[13px] text-white/70 hover:text-white transition-colors block mb-1"
             >
-              +91 98765 43210
+              +91 85956 50338
             </a>
             <a 
               href="mailto:contact@gslo.in" 
               className="text-[13px] text-white/70 hover:text-white transition-colors block"
             >
-              info@gslo.in
+              gs@gauravsharma.org
             </a>
           </div>
         </div>

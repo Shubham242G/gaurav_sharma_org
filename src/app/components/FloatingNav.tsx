@@ -9,6 +9,11 @@ export default function FloatingNav() {
   const pathname = usePathname()
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
+  // Hide on home page
+  if (pathname === '/') {
+    return null
+  }
+
   const navItems = [
     { route: '/pages/personalLife', label: 'Personal' },
     { route: '/pages/professionalLife', label: 'Professional' },
@@ -43,12 +48,10 @@ export default function FloatingNav() {
             whileTap={{ scale: 0.95 }}
             aria-label={item.label}
           >
-            {/* Text Label */}
             <span className="text-sm font-medium whitespace-nowrap">
               {item.label}
             </span>
 
-            {/* Active indicator */}
             {isActive && (
               <motion.div
                 className="absolute inset-0 rounded-full bg-black/20"

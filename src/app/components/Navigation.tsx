@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center">
             <h1 className="text-[22px] md:text-[24px] font-semibold text-[#0a0e27] tracking-tight">
-              Be.Guardit
+              Gaurav Sharma
             </h1>
           </div>
 

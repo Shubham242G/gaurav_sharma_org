@@ -7,7 +7,7 @@ const AboutSection: React.FC = () => {
     <section className="relative bg-white">
       {/* Full Width Banner - 35% of screen height */}
       <div className="relative w-full h-[47vh]">
-        <div 
+        {/* <div 
           className="absolute inset-0"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=800&fit=crop')`,
@@ -15,10 +15,10 @@ const AboutSection: React.FC = () => {
             backgroundSize: 'cover',
             filter: 'grayscale(100%)', // Black & white effect
           }}
-        >
+        > */}
           {/* Dark overlay for contrast */}
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+          {/* <div className="absolute inset-0 bg-black/40"></div>
+        </div> */}
       </div>
 
       {/* Content Section */}

@@ -27,25 +27,25 @@ export default function PersonalLife() {
       name: "Dr. NK Sharma",
       relation: "Father",
       description: "A practising doctor (MBBS, MD) and my eternal support system, guiding me through life's decisions and helping establish Mednlaw with his healthcare expertise.",
-      icon: "👨‍⚕️"
+     
     },
     {
       name: "Late Dr. Bharti Sharma",
       relation: "Mother",
       description: "A professor who was home to me. Her values, emotional intelligence, and personality shaped who I am today. Her choice to never drink or smoke became mine too.",
-      icon: "👩‍🏫"
+     
     },
     {
       name: "Kaavya",
       relation: "Wife",
       description: "My soulmate who brought stability and happiness back into my life. Together we're building a beautiful family filled with love and understanding.",
-      icon: "💝"
+     
     },
     {
       name: "Pranay & Aahana",
       relation: "Children",
       description: "The lights of my life who remind me every day what I'm working towards—a better, more just world for their generation.",
-      icon: "👦👧"
+     
     }
   ]
 
@@ -299,7 +299,6 @@ export default function PersonalLife() {
                 className="border border-black/10 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-4xl">{member.icon}</div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-black mb-1">{member.name}</h3>
                     <p className="text-xs text-black/50 mb-3">{member.relation}</p>
@@ -348,7 +347,7 @@ export default function PersonalLife() {
               onMouseEnter={() => setHoveredImage('father')}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <div
+              {/* <div
                 className="absolute inset-0 transition-all duration-500"
                 style={{
                   backgroundImage: `url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=800&fit=crop')`,
@@ -356,7 +355,7 @@ export default function PersonalLife() {
                   backgroundSize: 'cover',
                   filter: hoveredImage === 'father' ? 'grayscale(0%)' : 'grayscale(100%)',
                 }}
-              />
+              /> */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </motion.div>
           </div>

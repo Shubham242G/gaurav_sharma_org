@@ -77,54 +77,6 @@ const notableCases: NotableCase[] = [
     brief: "Legal proceedings against renowned film star for ₹20 crore fraud.",
     full: "We have also initiated legal proceedings against a renowned film star, who is accused of defrauding our client, CDR ESTATE AND PRIVATE LIMITED & ANR. of ₹20 crore."
   },
-  {
-    id: 9,
-    title: "Landmark Constitutional Victory on Privacy Rights",
-    year: "2022",
-    court: "Supreme Court of India",
-    brief: "Successfully argued for fundamental right to privacy under Article 21.",
-    full: "Successfully argued for the fundamental right to privacy under Article 21 in a precedent-setting case that impacted millions of citizens. The judgment reinforced privacy as an intrinsic part of personal liberty and dignity, setting a landmark precedent for future constitutional matters. This case involved challenging government surveillance policies and establishing clear boundaries for state intrusion into private lives. The unanimous verdict by the 5-judge bench has been cited in over 100 subsequent cases."
-  },
-  {
-    id: 10,
-    title: "Corporate Fraud Defense - ₹500 Crore Case",
-    year: "2021",
-    court: "Delhi High Court",
-    brief: "Defended major corporation against allegations of financial misconduct.",
-    full: "Defended a major Indian corporation against allegations of financial misconduct and securities fraud worth ₹500 crores. Through meticulous evidence analysis, expert testimony from forensic accountants, and proving compliance with SEBI regulations, successfully got all charges dropped. The case involved complex financial instruments, cross-border transactions, and required coordination with international law firms. Protected shareholder value and corporate reputation through strategic legal defense spanning 18 months of intense litigation."
-  },
-  {
-    id: 11,
-    title: "Human Rights Campaign for Tribal Communities",
-    year: "2020",
-    court: "Supreme Court of India",
-    brief: "Pro-bono PIL for marginalized tribal communities seeking welfare benefits.",
-    full: "Pro-bono Public Interest Litigation representing marginalized tribal communities seeking essential welfare benefits and legal protections under Forest Rights Act, 2006. Secured landmark judgment mandating policy reforms for indigenous rights across 8 states, benefiting over 2 million tribal families. The case involved challenging discriminatory government policies, presenting extensive socio-economic data, and coordinating with multiple NGOs. The judgment has been hailed as a watershed moment in tribal rights jurisprudence in India."
-  },
-  {
-    id: 12,
-    title: "Environmental Protection Case - Narmada River",
-    year: "2019",
-    court: "National Green Tribunal",
-    brief: "Prevented illegal industrial dumping affecting 50+ villages.",
-    full: "Successfully represented environmental activists in preventing illegal industrial dumping into Narmada River, affecting over 50 villages and critical wetland ecosystems. Secured immediate closure orders against 12 polluting units and mandatory environmental restoration fund of ₹200 crores. The case involved extensive environmental impact assessments, scientific expert testimonies, and satellite imagery evidence. This victory set important precedents for industrial accountability and community environmental rights."
-  },
-  {
-    id: 13,
-    title: "Workers' Rights - Gig Economy Landmark Case",
-    year: "2023",
-    court: "Supreme Court of India",
-    brief: "Established social security rights for gig economy workers.",
-    full: "Argued groundbreaking case establishing social security and minimum wage rights for gig economy workers across food delivery, ride-hailing, and freelance platforms. The judgment classified platform workers as 'employees' rather than 'independent contractors', extending ESI, PF, and other statutory benefits to over 5 million workers. This case required extensive economic analysis, comparative international law research, and testimonies from workers across 15 cities. The verdict has fundamentally reshaped India's labor law landscape in the digital age."
-  },
-  {
-    id: 14,
-    title: "Medical Negligence - ₹10 Crore Compensation",
-    year: "2018",
-    court: "High Court",
-    brief: "Secured record compensation for victim of surgical negligence.",
-    full: "Represented family in high-profile medical negligence case against premier hospital chain, securing record ₹10 crore compensation for victim of botched surgical procedure resulting in permanent disability. The case involved complex medical evidence, cross-examination of top surgeons, and establishing hospital's systemic failures in patient safety protocols. This landmark verdict established important precedents for medical accountability, informed consent standards, and quantum of compensation in medical negligence cases in India."
-  }
 ]
 
 

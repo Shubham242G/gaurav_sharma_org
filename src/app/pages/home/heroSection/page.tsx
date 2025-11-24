@@ -99,16 +99,6 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="border-l-4 border-white/50 pl-6 mt-8"
             >
-              <p className="
-                font-playfair 
-                text-xl md:text-2xl lg:text-3xl
-                font-light
-                italic
-                opacity-70
-                leading-relaxed
-              ">
-                "Justice delayed is justice denied, but justice fought for is justice earned."
-              </p>
             </motion.div>
           </div>
         </div>
