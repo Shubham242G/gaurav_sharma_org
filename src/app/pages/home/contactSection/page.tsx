@@ -48,20 +48,6 @@ export default function ContactSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 pt-8 border-t border-white/10"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <a href="tel:+919876543210" className="group">
-              <div className="text-white/40 text-xs mb-1 group-hover:text-white/60 transition-colors">Phone</div>
-              <div className="text-white text-sm font-medium group-hover:text-white/90 transition-colors">+91 98765 43210</div>
-            </a>
-            <a href="mailto:contact@gslo.com" className="group">
-              <div className="text-white/40 text-xs mb-1 group-hover:text-white/60 transition-colors">Email</div>
-              <div className="text-white text-sm font-medium group-hover:text-white/90 transition-colors">contact@gslo.com</div>
-            </a>
-            <div>
-              <div className="text-white/40 text-xs mb-1">Office Hours</div>
-              <div className="text-white text-sm font-medium">Mon - Fri: 9 AM - 6 PM</div>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

@@ -84,12 +84,32 @@ export default function HeroSection() {
                 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 
                 leading-snug
                 text-justify
+                mb-8
               "
             >
               Namaskar, I am <span className="text-[1.1em] font-semibold">Gaurav Sharma</span>. Here <span className="text-[1.1em] font-semibold">law meets life</span>. I fight cases, turn ideas into <span className="text-[1.1em] font-semibold">impact</span>, call out the system, 
               and sometimes… just vibe. Catch my <span className="text-[1.1em] font-semibold">legal takes</span>, courtroom stories, and 
               community-driven narratives. This isn't just a profession – it's a <span className="text-[1.1em] font-semibold">purpose</span>.
             </p>
+
+            {/* Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="border-l-4 border-white/50 pl-6 mt-8"
+            >
+              <p className="
+                font-playfair 
+                text-xl md:text-2xl lg:text-3xl
+                font-light
+                italic
+                opacity-70
+                leading-relaxed
+              ">
+                "Justice delayed is justice denied, but justice fought for is justice earned."
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
