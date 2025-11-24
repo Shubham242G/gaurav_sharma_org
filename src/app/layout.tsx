@@ -1,26 +1,25 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from './components/Header'
-
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import "./globals.css";
+import FloatingNav from "./components/FloatingNav";
 
 export const metadata: Metadata = {
-  title: 'Gaurav Sharma - Leading Lawyer',
-  description: 'Expert legal representation with 25+ years of experience',
-}
+  title: "Gaurav Sharma Law Offices",
+  description: "Professional Legal Services",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
+      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+        <FloatingNav />
         {children}
       </body>
     </html>
-  )
+  );
 }

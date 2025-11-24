@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function ProfessionalLife() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null)
@@ -46,35 +47,48 @@ export default function ProfessionalLife() {
   ]
 
   const ventures = [
-    {
-      name: "Gaurav Sharma Law Offices (GSLO)",
-      year: "2010",
-      tagline: "Comprehensive Legal Solutions",
-      description: "A full-service law firm providing comprehensive legal representation across multiple practice areas including constitutional law, criminal defense, family law, corporate litigation, and more. GSLO is built on principles of excellence, integrity, and client-focused service.",
-      icon: "⚖️"
-    },
-    {
-      name: "Mednlaw",
-      year: "2010",
-      tagline: "Healthcare Compliance & Protection",
-      description: "A boutique healthcare compliance firm safeguarding doctors, radiologists, and healthcare professionals from false medical negligence and PCPNDT Compliance claims. First firm to procure license for mobile ultrasound clinic.",
-      icon: "🏥"
-    },
-    {
-      name: "Unsaathi",
-      year: "2020",
-      tagline: "Mediation in Matrimonial Disputes",
-      description: "A platform promoting mediation and amicable settlement in matrimonial disputes, helping clients cope with divorce stress legally and emotionally. 'Moving Forward, Together or Apart.'",
-      icon: "🤝"
-    },
-    {
-      name: "EqualAid",
-      year: "2025",
-      tagline: "Legal Aid for All",
-      description: "A non-profit initiative offering legal aid to those who need it, ensuring every individual can enjoy the values of justice and equality regardless of financial constraints.",
-      icon: "⚖️"
-    }
-  ]
+  {
+    name: "Gaurav Sharma Law Offices (GSLO)",
+    year: "2010",
+    tagline: "Comprehensive Legal Solutions",
+    description: "A full-service law firm providing comprehensive legal representation across multiple practice areas including constitutional law, criminal defense, family law, corporate litigation, and more. GSLO is built on principles of excellence, integrity, and client-focused service.",
+    logo: "/assets/gslo-white.png",
+    logoWidth: 85,
+    logoHeight: 80,
+    containerHeight: "h-20"
+  },
+  {
+    name: "Mednlaw",
+    year: "2010",
+    tagline: "Healthcare Compliance & Protection",
+    description: "A boutique healthcare compliance firm safeguarding doctors, radiologists, and healthcare professionals from false medical negligence and PCPNDT Compliance claims. First firm to procure license for mobile ultrasound clinic.",
+    logo: "/assets/medNlaw.png",
+    logoWidth: 160,
+    logoHeight: 80,
+    containerHeight: "h-20"
+  },
+  {
+    name: "Unsaathi",
+    year: "2020",
+    tagline: "Mediation in Matrimonial Disputes",
+    description: "A platform promoting mediation and amicable settlement in matrimonial disputes, helping clients cope with divorce stress legally and emotionally. 'Moving Forward, Together or Apart.'",
+    logo: "/assets/Unsaathi-logo2.png",
+    logoWidth: 180,
+    logoHeight: 80,
+    containerHeight: "h-20"
+  },
+  {
+    name: "EqualAid",
+    year: "2025",
+    tagline: "Legal Aid for All",
+    description: "A non-profit initiative offering legal aid to those who need it, ensuring every individual can enjoy the values of justice and equality regardless of financial constraints.",
+    logo: "/assets/equal-aid.png",
+    logoWidth: 180,
+    logoHeight: 80,
+    containerHeight: "h-20"
+  }
+]
+
 
   const achievements = [
     "Lt. Governor's Scout Honor",
@@ -264,34 +278,45 @@ export default function ProfessionalLife() {
 
           {/* Horizontal Scrollable Container */}
           <div className="relative">
-            <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
-              {ventures.map((venture, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="flex-shrink-0 w-[340px] border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all duration-300 snap-start"
-                >
-                  <div className="text-4xl mb-4">{venture.icon}</div>
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <h3 className="text-2xl font-semibold">{venture.name}</h3>
-                    <span className="text-xs text-white/50">{venture.year}</span>
-                  </div>
-                  <p className="text-sm text-white/60 mb-3 italic">{venture.tagline}</p>
-                  <p className="text-[14px] text-white/80 leading-relaxed">
-                    {venture.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Scroll Indicator */}
-            <div className="text-center mt-4">
-              <p className="text-xs text-white/40">← Scroll to explore more →</p>
-            </div>
-          </div>
+  <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
+    {ventures.map((venture, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: idx * 0.1 }}
+        className="flex-shrink-0 w-[340px] border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all duration-300 snap-start"
+      >
+        {/* Fixed logo container with consistent alignment */}
+        <div className={`${venture.containerHeight} w-full mb-4 flex items-center justify-start`}>
+          <Image
+            src={venture.logo}
+            alt={`${venture.name} logo`}
+            width={venture.logoWidth}
+            height={venture.logoHeight}
+            className="object-contain"
+          />
+        </div>
+        
+        <div className="flex items-baseline gap-2 mb-2">
+          <h3 className="text-2xl font-semibold">{venture.name}</h3>
+          <span className="text-xs text-white/50">{venture.year}</span>
+        </div>
+        <p className="text-sm text-white/60 mb-3 italic">{venture.tagline}</p>
+        <p className="text-[14px] text-white/80 leading-relaxed">
+          {venture.description}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+  
+  {/* Scroll Indicator */}
+  <div className="text-center mt-4">
+    <p className="text-xs text-white/40">← Scroll to explore more →</p>
+  </div>
+</div>
+
         </div>
 
         {/* Custom Scrollbar Styles */}
