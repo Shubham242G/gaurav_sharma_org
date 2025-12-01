@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
+import DisclaimerModal from '@/app/components/DisclaimerModal'
 
 const services = [
   { 
@@ -49,6 +50,9 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* Disclaimer Modal */}
+      <DisclaimerModal />
+
       <section 
         className="relative min-h-screen cursor-pointer"
         onMouseEnter={() => setHoveredImage('banner')}

@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Gaurav Sharma Law Offices",
+  title: "Gaurav Sharma",
   description: "Professional Legal Services",
 };
 
