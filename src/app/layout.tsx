@@ -10,6 +10,10 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Gaurav Sharma",
   description: "Professional Legal Services",
+  icons: {
+    icon: "/assets/gaurav-sharma-org-header.png",
+  },
+
 };
 
 export default function RootLayout({

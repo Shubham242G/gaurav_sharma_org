@@ -25,7 +25,7 @@ export default function Header() {
           >
             <div className="w-[200px] flex items-center justify-center">
               <img 
-                src="/assets/gaurav_sharma.png" 
+                src="/gaurav_sharma.png" 
                 alt="Gaurav Sharma Logo" 
                 className="w-full h-full object-contain transition-all duration-500"
                 style={{
