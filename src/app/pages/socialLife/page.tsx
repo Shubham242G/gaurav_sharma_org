@@ -28,7 +28,6 @@ export default function SocialLife() {
             year: "2025",
             tagline: "Free Legal Aid for All",
             description: "Inspired by Article 39A of the Constitution, providing free legal aid to underprivileged people who cannot afford legal representation.",
-            icon: "⚖️",
             principle: "Everyone has the right to be defended"
         },
         {
@@ -36,7 +35,6 @@ export default function SocialLife() {
             year: "Ongoing",
             tagline: "Safe Workplaces for Women",
             description: "Proactively promoting awareness about Prevention of Sexual Harassment at Workplace Act, creating safe working environments.",
-            icon: "👩‍💼",
             principle: "Safety and dignity at workplace"
         },
         {
@@ -44,7 +42,6 @@ export default function SocialLife() {
             year: "2024",
             tagline: "Justice for the Falsely Accused",
             description: "Filed writ petition in Delhi High Court seeking compensation scheme for men framed in false rape cases after successful acquittal.",
-            icon: "⚖️",
             principle: "Justice must work both ways"
         }
     ]
@@ -267,7 +264,6 @@ export default function SocialLife() {
                                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                                 className="border-2 border-white/20 rounded-2xl p-6 hover:border-white/60 transition-all duration-300"
                             >
-                                <div className="text-5xl mb-4">{initiative.icon}</div>
                                 <div className="flex items-baseline gap-2 mb-2">
                                     <h3 className="text-2xl font-semibold">{initiative.name}</h3>
                                     <span className="text-xs text-white/50">{initiative.year}</span>
@@ -296,7 +292,6 @@ export default function SocialLife() {
                         className="border-2 border-black/10 rounded-2xl p-8 md:p-12"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="text-5xl">⚖️</div>
                             <div>
                                 <h2 className="text-[28px] md:text-[36px] font-semibold text-black">EqualAid</h2>
                                 <p className="text-sm text-black/60">Inspired by Article 39A of the Constitution</p>

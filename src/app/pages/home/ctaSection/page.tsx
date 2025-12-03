@@ -97,16 +97,37 @@ export default function CTASection() {
     return () => clearInterval(interval)
   }, [isPaused, expandedCard])
 
+  const smoothScrollTo = (target: number) => {
+  const container = scrollContainerRef.current;
+  if (!container) return;
+
+  const start = container.scrollLeft;
+  const change = target - start;
+  const duration = 450;
+  let startTime: number | null = null;
+
+  const animateScroll = (currentTime: number) => {
+    if (!startTime) startTime = currentTime;
+    const progress = currentTime - startTime;
+    const percent = Math.min(progress / duration, 1);
+
+    container.scrollLeft = start + change * percent;
+
+    if (percent < 1) requestAnimationFrame(animateScroll);
+  };
+
+  requestAnimationFrame(animateScroll);
+};
+
   // Scroll to current index
   useEffect(() => {
-    if (scrollContainerRef.current && expandedCard === null) {
-      const cardWidth = 370
-      scrollContainerRef.current.scrollTo({
-        left: currentIndex * cardWidth,
-        behavior: 'smooth'
-      })
-    }
-  }, [currentIndex, expandedCard])
+  if (scrollContainerRef.current && expandedCard === null) {
+    const cardElement = scrollContainerRef.current.querySelector('div > div');
+    const cardWidth = cardElement ? cardElement.clientWidth + 24 : 370;
+
+    smoothScrollTo(currentIndex * cardWidth);
+  }
+}, [currentIndex, expandedCard]);
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + notableCases.length) % notableCases.length)
