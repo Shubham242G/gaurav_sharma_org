@@ -8,6 +8,7 @@ import FeaturesSection from './featuresSection/page'
 import CTASection from './ctaSection/page'
 import TestimonialsSection from './testimoniesSection/page'
 import ContactSection from './contactSection/page'
+import RecommendedBooks from './bookRecommendations/page'
 
 
 export default function HomePage() {
