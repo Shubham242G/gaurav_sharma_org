@@ -17,12 +17,12 @@ export default function FeaturesSection() {
   ]
 
   const books = [
-    { title: "India that is Bharat", author: "J Sai Deepak", image: "/assets/IndiaBharat.jpg" },
-    { title: "Hindus in Hindu Rashtra", author: "Anand Ranganathan", image: "/assets/HindusAndHinduRashtra.webp" },
-    { title: "Falling Over Backwards", author: "Arun Shourie", image: "/assets/FallingOverBackwards.webp" },
-    { title: "The India Way", author: "S Jaishankar", image: "/assets/TheIndiaWay.webp" },
-    { title: "Rewriting Indian History", author: "Francis Gautier", image: "/assets/RewritingIndianHistory.jpg" },
-    { title: "The Courtroom Genius", author: "Nani Palkhiwala", image: "/assets/Courtroom.jpg" },
+    { title: "India that is Bharat", author: "J Sai Deepak", image: "/assets/IndiaBharat.png", style: "object-contain bg-white/50 p-3 rounded-lg" },
+    { title: "Hindus in Hindu Rashtra", author: "Anand Ranganathan", image: "/assets/HindusAndHinduRashtra.png", style: "object-contain bg-gradient-to-br from-orange-50 to-yellow-50 p-4 rounded-xl shadow-sm" },
+    { title: "Falling Over Backwards", author: "Arun Shourie", image: "/assets/FallingOverBackwards.png", style: "object-contain bg-gradient-to-r from-blue-50 to-indigo-50 p-3 rounded-lg border border-blue-100" },
+    { title: "The India Way", author: "S Jaishankar", image: "/assets/TheIndiaWay.webp", style: "object-contain bg-gradient-to-b from-emerald-50 to-teal-50 p-4 rounded-xl shadow-md" },
+    { title: "Rewriting Indian History", author: "Francis Gautier", image: "/assets/RewritingIndianHistory.jpg", style: "object-contain bg-gradient-to-tr from-purple-50 to-pink-50 p-3 rounded-lg shadow-sm border border-purple-100" },
+    { title: "The Courtroom Genius", author: "Nani Palkhiwala", image: "/assets/Courtroom.png", style: "object-contain bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-xl shadow-lg" },
   ]
 
   const trackRef = useRef(null)
@@ -106,7 +106,7 @@ export default function FeaturesSection() {
           {/* Slider Animation CSS */}
           <style>{`
             @keyframes smoothScrollRight {
-              0% { transform: translateX(0); }
+               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
             }
           `}</style>
@@ -119,12 +119,12 @@ export default function FeaturesSection() {
               {[...books, ...books].map((book, idx) => (
                 <div key={idx} className="w-64 mx-4 flex-shrink-0">
                   <div className="h-72 p-6 rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-2">
-                    {/* Real Book Image */}
-                    <div className="w-full h-44 rounded-xl overflow-hidden mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    {/* Individual Book Styling - Full image visible, no cropping */}
+                    <div className={`w-full h-44 rounded-xl overflow-hidden mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 ${book.style}`}>
                       <img
                         src={book.image}
                         alt={`${book.title} by ${book.author}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>

@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function DisclaimerModal() {
   const [isOpen, setIsOpen] = useState(false)
   const [isChecked, setIsChecked] = useState(false)
-
-  useEffect(() => {
+  
+useEffect(() => {
     // Check if user has already accepted the disclaimer
     const hasAccepted = localStorage.getItem('disclaimerAccepted')
     if (!hasAccepted) {
@@ -16,6 +16,7 @@ export default function DisclaimerModal() {
       document.body.style.overflow = 'hidden'
     }
   }, [])
+  
 
   const handleProceed = () => {
     if (isChecked) {
