@@ -21,7 +21,7 @@ export default function FeaturesSection() {
     { title: "Hindus in Hindu Rashtra", author: "Anand Ranganathan", image: "/assets/HindusAndHinduRashtra.png", style: "object-contain bg-gradient-to-br from-orange-50 to-yellow-50 p-4 rounded-xl shadow-sm" },
     { title: "Falling Over Backwards", author: "Arun Shourie", image: "/assets/FallingOverBackwards.png", style: "object-contain bg-gradient-to-r from-blue-50 to-indigo-50 p-3 rounded-lg border border-blue-100" },
     { title: "The India Way", author: "S Jaishankar", image: "/assets/TheIndiaWay.webp", style: "object-contain bg-gradient-to-b from-emerald-50 to-teal-50 p-4 rounded-xl shadow-md" },
-    { title: "Rewriting Indian History", author: "Francis Gautier", image: "/assets/RewritingIndianHistory.jpg", style: "object-contain bg-gradient-to-tr from-purple-50 to-pink-50 p-3 rounded-lg shadow-sm border border-purple-100" },
+    { title: "Rewriting Indian History", author: "Francis Gautier", image: "/assets/RewritingIndianHistory.png", style: "object-contain bg-gradient-to-tr from-purple-50 to-pink-50 p-3 rounded-lg shadow-sm border border-purple-100" },
     { title: "The Courtroom Genius", author: "Nani Palkhiwala", image: "/assets/Courtroom.png", style: "object-contain bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-xl shadow-lg" },
   ]
 
